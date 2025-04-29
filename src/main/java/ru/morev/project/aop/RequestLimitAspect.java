@@ -29,7 +29,6 @@ public class RequestLimitAspect {
     @Around("execution(* ru.morev.project.controller..*(..))")
     public Object limitRequests(ProceedingJoinPoint joinPoint) throws Throwable {
         String methodName = joinPoint.getSignature().toShortString();
-
         requestCounters.putIfAbsent(methodName, new AtomicInteger(0));
         int currentCount = requestCounters.get(methodName).incrementAndGet();
 

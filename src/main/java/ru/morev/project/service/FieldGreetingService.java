@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FieldGreetingService implements GreetingService {
 
+    @Override
     public String greet() {
         return "Привет из FieldGreetingService";
     }

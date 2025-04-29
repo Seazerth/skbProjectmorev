@@ -11,6 +11,7 @@ public class SetterGreetingService implements GreetingService {
         System.out.println("🧱 SetterGreetingService создан");
     }
 
+    @Override
     public String greet() {
         return "Привет из SetterGreetingService";
     }

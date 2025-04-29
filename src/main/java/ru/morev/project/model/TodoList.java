@@ -7,9 +7,10 @@ import java.util.List;
 
 @Data
 public class TodoList {
-    @NotEmpty(message = "Имя списка не может быть пустым")
+
+    @NotEmpty(message = "Имя списка не должно быть пустым")
     private String name;
 
-    @NotEmpty(message = "Список задач не может быть пустым")
+    @NotEmpty(message = "Список задач не должен быть пустым")
     private List<String> events;
 }

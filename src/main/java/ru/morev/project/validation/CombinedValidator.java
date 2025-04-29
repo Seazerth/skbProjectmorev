@@ -8,6 +8,6 @@ public class CombinedValidator implements ConstraintValidator<CombinedValidation
 
     @Override
     public boolean isValid(TodoList list, ConstraintValidatorContext context) {
-        return list.getName() != null && !list.getEvents().isEmpty();
+        return list.getName() != null && list.getEvents() != null && !list.getEvents().isEmpty();
     }
 }
