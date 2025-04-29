@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: todolist-prod
+
+app:
+  name: ProdApp
+  values:
+    - prod1
+    - prod2
+  env-variable: ${EXAMPLE_TEST:not-default}

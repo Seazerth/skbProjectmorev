@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: todolist
+
+app:
+  name: DefaultApp
+  values:
+    - default1
+    - default2
+  env-variable: ${EXAMPLE_TEST:default}
+
+request:
+  limit:
+    max: 5
+
+rabbit:
+  queue:
+    name: defaultQueue

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: todolist-dev
+
+app:
+  name: DevApp
+  values:
+    - dev1
+    - dev2
+  env-variable: ${EXAMPLE_TEST:dev}

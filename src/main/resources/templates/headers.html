@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Заголовки</title>
+</head>
+<body>
+<h1>Заголовки запроса</h1>
+<ul>
+    <li th:each="header : ${headers}">
+        <strong th:text="${header.key}">Header</strong>:
+        <span th:text="${header.value}">Value</span>
+    </li>
+</ul>
+</body>
+</html>
