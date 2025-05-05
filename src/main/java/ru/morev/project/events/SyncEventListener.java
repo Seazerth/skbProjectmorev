@@ -10,6 +10,6 @@ public class SyncEventListener {
 
     @EventListener
     public void handleEvent(Object event) {
-        log.info("🔄 SyncEventListener: получено событие {}", event);
+        log.info("SyncEventListener: получено событие {}", event);
     }
 }

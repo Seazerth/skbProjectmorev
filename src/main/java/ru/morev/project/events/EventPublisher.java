@@ -16,6 +16,6 @@ public class EventPublisher {
     }
 
     public void publishGenericEvent(String msg) {
-        publisher.publishEvent("📢 Сообщение: " + msg);
+        publisher.publishEvent("Сообщение: " + msg);
     }
 }

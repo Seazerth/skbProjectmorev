@@ -12,6 +12,6 @@ public class TestProfileConfig {
 
     @PostConstruct
     public void init() {
-        log.info("✅ Активен профиль: TEST");
+        log.info("Активен профиль: TEST");
     }
 }

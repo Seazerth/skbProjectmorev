@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class SetterGreetingService implements GreetingService {
 
     public SetterGreetingService() {
-        System.out.println("🧱 SetterGreetingService создан");
+        System.out.println("SetterGreetingService создан");
     }
 
     @Override
@@ -18,11 +18,11 @@ public class SetterGreetingService implements GreetingService {
 
     @PostConstruct
     public void init() {
-        System.out.println("📦 SetterGreetingService — @PostConstruct");
+        System.out.println("SetterGreetingService — @PostConstruct");
     }
 
     @PreDestroy
     public void destroy() {
-        System.out.println("🧹 SetterGreetingService — @PreDestroy");
+        System.out.println("SetterGreetingService — @PreDestroy");
     }
 }

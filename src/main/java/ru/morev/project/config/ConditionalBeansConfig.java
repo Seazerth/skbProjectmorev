@@ -12,21 +12,21 @@ public class ConditionalBeansConfig {
     @Bean
     @Profile("test")
     public String testOnlyBean() {
-        log.info("🔨 Бин testOnlyBean активен (только в test)");
+        log.info("Бин testOnlyBean активен (только в test)");
         return "TestOnlyBean";
     }
 
     @Bean
     @ConditionalOnBean(name = "testOnlyBean")
     public String dependentOnTestOnlyBean() {
-        log.info("📎 dependentOnTestOnlyBean создан — testOnlyBean есть");
+        log.info("dependentOnTestOnlyBean создан — testOnlyBean есть");
         return "DependentBean";
     }
 
     @Bean
     @ConditionalOnProperty(name = "app.env-variable", havingValue = "not-default")
     public String envBasedBean() {
-        log.info("🌍 Бин envBasedBean активен (env-переменная задана)");
+        log.info("Бин envBasedBean активен (env-переменная задана)");
         return "EnvBasedBean";
     }
 }

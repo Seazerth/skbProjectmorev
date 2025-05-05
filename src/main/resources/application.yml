@@ -1,6 +1,11 @@
 spring:
   application:
     name: todolist
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
 
 app:
   name: DefaultApp
@@ -15,4 +20,8 @@ request:
 
 rabbit:
   queue:
-    name: defaultQueue
+    name: homework.queue
+  exchange:
+    name: homework.exchange
+  routing:
+    key: homework.key

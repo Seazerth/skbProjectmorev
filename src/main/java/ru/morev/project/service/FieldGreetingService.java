@@ -14,11 +14,11 @@ public class FieldGreetingService implements GreetingService {
 
     @PostConstruct
     public void init() {
-        System.out.println("📦 FieldGreetingService — @PostConstruct");
+        System.out.println("FieldGreetingService — @PostConstruct");
     }
 
     @PreDestroy
     public void destroy() {
-        System.out.println("🧹 FieldGreetingService — @PreDestroy");
+        System.out.println("FieldGreetingService — @PreDestroy");
     }
 }

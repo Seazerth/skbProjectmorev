@@ -12,7 +12,7 @@ public class RoleBasedApiController {
 
     @GetMapping("/public")
     public String publicApi() {
-        return "🌍 Публичный API доступен всем";
+        return "Публичный API доступен всем";
     }
 
     @GetMapping("/admin")

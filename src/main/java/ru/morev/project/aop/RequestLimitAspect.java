@@ -33,7 +33,7 @@ public class RequestLimitAspect {
         int currentCount = requestCounters.get(methodName).incrementAndGet();
 
         if (currentCount > maxRequests) {
-            log.warn("⚠️ Метод {} превысил лимит запросов ({}).", methodName, maxRequests);
+            log.warn("Метод {} превысил лимит запросов ({}).", methodName, maxRequests);
             throw new RequestLimitExceededException("Превышен лимит вызовов метода: " + methodName);
         }
 

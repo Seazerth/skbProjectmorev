@@ -12,6 +12,6 @@ public class ProdProfileConfig {
 
     @PostConstruct
     public void init() {
-        log.info("✅ Активен профиль: PROD");
+        log.info("Активен профиль: PROD");
     }
 }

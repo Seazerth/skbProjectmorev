@@ -10,6 +10,6 @@ public class MessageConsumer {
 
     @RabbitListener(queues = "${rabbit.queue.name:defaultQueue}")
     public void receiveMessage(String message) {
-        log.info("📥 Получено сообщение из очереди: {}", message);
+        log.info("Получено сообщение из очереди: {}", message);
     }
 }

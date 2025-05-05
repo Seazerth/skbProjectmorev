@@ -12,6 +12,6 @@ public class AsyncEventListener {
     @Async
     @EventListener
     public void handleAsync(Object event) {
-        log.info("🕒 AsyncEventListener: обработка события {}", event);
+        log.info("AsyncEventListener: обработка события {}", event);
     }
 }

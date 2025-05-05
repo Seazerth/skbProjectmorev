@@ -19,7 +19,7 @@ public class MessageProducer {
     }
 
     public void sendMessage(String message) {
-        log.info("📤 Отправка сообщения в очередь {}: {}", queueName, message);
+        log.info("Отправка сообщения в очередь {}: {}", queueName, message);
         rabbitTemplate.convertAndSend(queueName, message);
     }
 }

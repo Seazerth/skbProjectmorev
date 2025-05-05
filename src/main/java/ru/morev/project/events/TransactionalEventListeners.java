@@ -12,16 +12,16 @@ public class TransactionalEventListeners {
 
     @EventListener
     public void handleSyncEvent(Object event) {
-        log.info("🟢 Обычный EventListener: событие = {}", event);
+        log.info("Обычный EventListener: событие = {}", event);
     }
 
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void handleTransactionalEvent(Object event) {
-        log.info("✅ TransactionalEventListener (после коммита): {}", event);
+        log.info("TransactionalEventListener (после коммита): {}", event);
     }
 
     @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
     public void skipEvent(Object event) {
-        log.info("⛔ TransactionalEventListener (до коммита): {}", event);
+        log.info("TransactionalEventListener (до коммита): {}", event);
     }
 }
