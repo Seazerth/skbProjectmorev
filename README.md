@@ -1,15 +1,7 @@
-1. REST API для управления задачами (To-Do List)
-
-    Описание: Создание REST API для управления задачами, где пользователи могут добавлять, редактировать, удалять и получать задачи.
-    Технологии: Spring Boot (для создания REST API).
-    Особенности: Р стандартные CRUD операции для задач, обычные Java коллекции (например, List) или храние данных в памяти.
-
-
 
 # Spring DI, Validation, Security, Events & Messaging Showcase
 
-ФИО: Морев Владислав Витальевич
-
+ФИО: Морев Владислав Витальевич  
 Преподаватель: Никита Карсканов
 
 ## О проекте
@@ -23,6 +15,7 @@
 - Ограничение количества вызовов API через AOP
 - Аутентификацию с ролями через InMemoryUserDetailsManager
 - Интеграцию с брокером сообщений RabbitMQ
+- Метрики
 
 ---
 
@@ -118,4 +111,46 @@ implementation 'org.springframework.boot:spring-boot-starter-amqp'
 ---
 
 ## 11. Репозиторий
-ссылка появится позже
+
+https://github.com/Seazerth/2conteyner
+
+---
+
+## 12. Метрики и Актуаторы (Monitoring & Actuators)
+
+### Метрики
+
+Приложение отслеживает:
+- Общее количество выполненных задач (`todo.completed.tasks`) по типам: `home`, `work`, `other`
+- Время выполнения каждого запроса
+- Стандартные Spring Boot метрики (включены через Micrometer и Actuator)
+
+Метрики доступны по адресу:
+```
+GET /actuator/metrics
+GET /actuator/metrics/todo.completed.tasks
+```
+
+### Кастомный актуатор `/actuator/tasklog`
+
+Позволяет записать в лог дату и время вызова, например:
+```
+2025-05-06 15:43:27 Актуатор tasklog вызван
+```
+
+Пример запроса:
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/actuator/tasklog" -Method GET
+```
+
+### Эмуляция действий
+
+Выполнение задачи (например, `home`):
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/tasks/complete/home" -Method POST
+```
+
+Получение кастомных метрик:
+```powershell
+Invoke-RestMethod -Uri "http://localhost:8080/tasks/metrics" -Method GET
+```

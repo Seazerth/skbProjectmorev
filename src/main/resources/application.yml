@@ -7,6 +7,19 @@ spring:
     username: guest
     password: guest
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    enable:
+      all: true
+  endpoint:
+    health:
+      show-details: always
+
+
 app:
   name: DefaultApp
   values:
